@@ -1,4 +1,5 @@
 ﻿using GigHub.Models;
+using System;
 using System.Collections.Generic;
 
 
@@ -14,5 +15,10 @@ namespace GigHub.ViewModels
         // We need a numeric value for each option in dropdown list hence int
         public byte Genre { get; set; }
         public IEnumerable<Genre> Genres { get; set; } // list or collection can be used here but we wont anything using index
+
+        public DateTime DateTime {
+            get { return DateTime.Parse(string.Format("{0}, {1}", Date, Time)); }
+        }
+
     }
 }

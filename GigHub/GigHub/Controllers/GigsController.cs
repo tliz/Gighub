@@ -53,7 +53,10 @@ namespace GigHub.Controllers
             var gig = new Gig
             {
                 ArtistId = User.Identity.GetUserId(),
-                DateTime = DateTime.Parse(string.Format("{0}, {1}", viewModel.Date, viewModel.Time)),
+                // making controller responsible for parsing datetime object
+                // controller -- cordinator of application logic -> what should happen next
+                // parsing values is too detailed for controller to know
+                DateTime = viewModel.DateTime,
                 GenreId = viewModel.Genre,
                 Venue = viewModel.Venue
             };
