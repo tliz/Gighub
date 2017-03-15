@@ -46,17 +46,25 @@ namespace GigHub.Controllers
             // var artistId = User.Identity.GetUserId();
 
             // fetch values from database. but will issue 2 queries to database
-           // var artist = _context.Users.Single(u => u.Id == artistId);
+            // var artist = _context.Users.Single(u => u.Id == artistId);
             //var genre = _context.Genres.Single(g => g.Id == viewModel.Genre);
 
             // Gig object
+
+            // check if model is valid
+            if (!ModelState.IsValid)
+            {
+                viewModel.Genres = _context.Genres.ToList();
+                return View("Create", viewModel);
+            }
+
             var gig = new Gig
             {
                 ArtistId = User.Identity.GetUserId(),
                 // making controller responsible for parsing datetime object
                 // controller -- cordinator of application logic -> what should happen next
                 // parsing values is too detailed for controller to know
-                DateTime = viewModel.DateTime,
+                DateTime = viewModel.GetDateTime(),
                 GenreId = viewModel.Genre,
                 Venue = viewModel.Venue
             };
