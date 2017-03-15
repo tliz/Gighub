@@ -12,7 +12,7 @@ namespace GigHub.ViewModels
         public string Time { get; set; }
 
         // We need a numeric value for each option in dropdown list hence int
-        public int Genre { get; set; }
+        public byte Genre { get; set; }
         public IEnumerable<Genre> Genres { get; set; } // list or collection can be used here but we wont anything using index
     }
 }
