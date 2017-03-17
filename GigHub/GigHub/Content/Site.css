@@ -22,3 +22,29 @@ select,
 textarea {
     max-width: 280px;
 }
+
+
+/* Override Bootstrap */
+
+.navbar-inverse {
+    background-color: #ff4343;
+    border-color: #ff4343;
+}
+
+.navbar-inverse .navbar-brand {
+    color: #fff111;
+}
+
+.navbar-inverse .navbar-nav > li > a {
+    color: #fffeee;
+}
+
+.dropdown {
+    position: relative;
+    background-color: #ff2322;
+}
+
+span.field-validation-error {
+    color: red;
+    font-weight: bold;
+}
