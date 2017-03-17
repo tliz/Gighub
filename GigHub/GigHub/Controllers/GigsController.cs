@@ -36,6 +36,7 @@ namespace GigHub.Controllers
         // form model behind view. When form is posted that is what we are going to get
         [Authorize]
         [HttpPost]  // Action to be called only via post method
+        [ValidateAntiForgeryToken]
         public ActionResult Create(GigFormViewModel viewModel)
         {
             // convert viewModel to gig object 

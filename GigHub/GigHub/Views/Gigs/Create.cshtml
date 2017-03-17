@@ -13,6 +13,7 @@
 
 @using (Html.BeginForm("Create", "Gigs"))
 {
+    @Html.AntiForgeryToken()
     <div class="form-group">
         <!-- MVC helper methods. Attribute HTML element in brackets -->
         @Html.LabelFor(m => m.Venue)
